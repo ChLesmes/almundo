@@ -1,0 +1,72 @@
+<mat-expansion-panel [expanded]="panelOpenState" [disabled]="panelOpenState">
+  <mat-expansion-panel-header>
+    <mat-panel-title class="title-filter">
+      {{textFilter}}
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <span class="icon-search"></span>
+        Nombre del hotel
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div  class="container-filter">
+      <div class="row">
+        <div class="form-group col-8 ">
+          <input type="text" class="form-control" name="nombre" placeholder="Ingrese el nombre del hotel">
+        </div>
+        <div class="col-3">
+          <button mat-raised-button color="primary">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </mat-expansion-panel>
+  <mat-expansion-panel [expanded]="panelOpenState">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <span class="icon-star"></span>
+        Estrellas
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <div  class="container-filter">
+      <mat-checkbox color="primary" [(ngModel)]="checks[0]" (ngModelChange)="updateStar(0)" ><p>Todas las estrellas</p></mat-checkbox>
+      <mat-checkbox color="primary" [(ngModel)]="checks[1]" (ngModelChange)="updateStar(1)">
+        <div class="stars">
+          <span class="icon-star"></span>
+          <span class="icon-star"></span>
+          <span class="icon-star"></span>
+          <span class="icon-star"></span>
+          <span class="icon-star"></span>
+        </div>
+      </mat-checkbox>
+      <mat-checkbox color="primary" [(ngModel)]="checks[2]" (ngModelChange)="updateStar(2)">
+        <div class="stars">
+          <span class="icon-star"></span>
+          <span class="icon-star"></span>
+          <span class="icon-star"></span>
+          <span class="icon-star"></span>
+        </div>
+      </mat-checkbox>
+      <mat-checkbox color="primary" [(ngModel)]="checks[3]" (ngModelChange)="updateStar(3)">
+        <div class="stars">
+          <span class="icon-star"></span>
+          <span class="icon-star"></span>
+          <span class="icon-star"></span>
+        </div>
+      </mat-checkbox>
+      <mat-checkbox color="primary" [(ngModel)]="checks[4]" (ngModelChange)="updateStar(4)">
+        <div class="stars">
+          <span class="icon-star"></span>
+          <span class="icon-star"></span>
+        </div>
+      </mat-checkbox>
+      <mat-checkbox color="primary" [(ngModel)]="checks[5]" (ngModelChange)="updateStar(5)">
+        <div class="stars">
+          <span class="icon-star"></span>
+        </div>
+      </mat-checkbox>
+    </div>
+  </mat-expansion-panel>
+</mat-expansion-panel>

@@ -1,1 +1,186 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
+
+body{
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #F4F4F4;
+}
+app-hotel-list{
+  padding-left: 0;
+}
+.spinner{
+  margin-top: 80px;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+h3{
+  font-size: 16px;
+  font-weight: 700;
+  color: #3676B2;
+}
+.mat-button-wrapper{
+  font-size: 18px;
+  font-weight: 700;
+}
+app-hotel-item{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  max-height: 230px;
+  margin-bottom: 20px;
+  background-color: white;
+}
+app-hotel-item .container-img{
+  display: inline-block;
+  overflow: hidden;
+}
+app-hotel-item .container-img img{
+  max-width: 100%;
+  height: auto;
+
+}
+app-hotel-item .description{
+  flex: 1;
+  margin-left: 20px;
+}
+app-hotel-item .description h3{
+  margin-top: 6px;
+}
+app-hotel-item .info{
+  border-left: 1px dashed #CBCBCB;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 40px;
+}
+app-hotel-item .info p{
+  font-size: 14px;
+  margin-bottom: 5px;
+  width: 160px;
+}
+app-hotel-item .info .price{
+  font-size: 20px;
+  color: #D66900;
+  width: auto;
+}
+app-hotel-item .info .price span{
+  font-weight: 900;
+  font-size: 30px;
+
+}
+app-hotel-item .info button{
+  width: 100%;
+  margin: 5px 10px;
+}
+.stars .icon-star{
+  color: #F6BC00;
+  font-size: 16px;
+}
+.amenities{
+  margin-top: 10px;
+}
+.amenities span{
+  color: #464646;
+  font-size: 20px;
+  margin-right: 12px;
+}
+.mat-expansion-panel-body{
+  padding: 0!important;
+}
+mat-checkbox{
+  display: block;
+}
+mat-panel-title span{
+  font-size: 16px;
+  margin-right: 10px;
+}
+.mat-list .mat-list-item .mat-list-item-content{
+  padding: 0!important;
+}
+.list-view{
+  margin-top: 14px;
+  padding-right: 0;
+  overflow: hidden;
+}
+mat-expansion-panel .mat-button-wrapper{
+  font-size: 14px;
+}
+app-filter-form{
+  margin-top: 8px;
+}
+.mat-expansion-panel-body{
+  overflow: hidden;
+}
+@media (max-width: 991px) {
+  .list-view{
+    margin-top: 0;
+  }
+  app-filter-form{
+    margin-top: 0;
+  }
+  app-hotel-item{
+    max-height: none;
+  }
+  app-hotel-item .info{
+    border-left: none;
+    border-top: 1px dashed #CBCBCB;
+    margin-top: 20px;
+  }
+  app-hotel-item .description h3{
+    margin-top: 6px;
+  }
+  app-hotel-item .info{
+    padding: 18px 0;
+  }
+  app-hotel-item .info p{
+    width: auto;
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+  app-hotel-item .info .price{
+    font-size: 18px;
+  }
+  app-hotel-item .info .price span{
+    font-size: 25px;
+
+  }
+  app-hotel-list{
+    margin: 15px;
+  }
+  .container-fluid {
+    padding: 0 !important;
+  }
+  app-hotel-list {
+    padding: 0 25px !important;
+  }
+}
+@media (max-width: 540px) {
+  app-hotel-item .description h3{
+    margin-top: 15px;
+  }
+  mat-toolbar-row img{
+    max-height: 32px;
+  }
+  app-hotel-item{
+    flex-direction: column;
+  }
+  app-hotel-item img{
+    align-self: center;
+    width: 100%;
+  }
+  app-hotel-item .description{
+    margin-left: 0;
+  }
+  .mat-content {
+    flex: unset!important;
+  }
+
+
+}
