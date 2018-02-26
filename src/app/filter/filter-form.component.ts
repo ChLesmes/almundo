@@ -1,4 +1,6 @@
-import {Component, OnInit, HostListener} from '@angular/core';
+import {Component, OnInit, HostListener, Input} from '@angular/core';
+import { Filter } from './filter.model';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-filter-form',
@@ -6,10 +8,13 @@ import {Component, OnInit, HostListener} from '@angular/core';
   styleUrls: ['./filter-form.component.scss']
 })
 export class FilterFormComponent implements OnInit{
+  @Input() filter: Filter;
   panelOpenState: boolean = true;
   checks: boolean[] = [true,false,false,false,false,false];
   textFilter: string;
   widhtScreen: number = 992;
+
+  constructor(private app: AppComponent) { }
 
   ngOnInit(){
     this.validateWidth(window.innerWidth);
@@ -39,6 +44,16 @@ export class FilterFormComponent implements OnInit{
     }*/else if (index > 0) {
       this.checks[0] = false;
     }
+    this.filter.stars = [];
+    if (!this.checks[0]){
+      for (let i=1; i<this.checks.length; i++) {
+        if (this.checks[i]) {
+          this.filter.stars.push(6-i);
+        }
+      }
+    }
+    this.app.updateFilter(this.filter);
+
   }
 
 }

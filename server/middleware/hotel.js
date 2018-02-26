@@ -31,8 +31,16 @@ export const hotelFilterMiddleware = (req, res, next) => {
   if (name){
     hotels = hotels.filter(( hotel ) => hotel.name.toUpperCase().includes(name.toUpperCase()));
   }
-  if(stars){
-    hotels = hotels.filter(( hotel ) => +hotel.stars === +stars);
+  if(stars && stars.length > 0){
+    let myHotels = [];
+    stars.forEach((star)=>{
+      myHotels.push(hotels.filter(( hotel ) => +hotel.stars === +star));
+    });
+    hotels = [];
+    myHotels.forEach((starHotels) => {
+      hotels = hotels.concat(starHotels);
+    });
+
   }
   req.hotels = hotels;
   next();

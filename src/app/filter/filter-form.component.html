@@ -12,14 +12,16 @@
       </mat-panel-title>
     </mat-expansion-panel-header>
     <div  class="container-filter">
-      <div class="row">
-        <div class="form-group col-8 ">
-          <input type="text" class="form-control" name="nombre" placeholder="Ingrese el nombre del hotel">
+      <form>
+        <div class="row">
+          <div class="form-group col-8 ">
+            <input type="text" class="form-control" [(ngModel)]="filter.name" name="nombre" placeholder="Ingrese el nombre del hotel">
+          </div>
+          <div class="col-3">
+            <button mat-raised-button color="primary" (click)="app.updateFilter(filter)" >Aceptar</button>
+          </div>
         </div>
-        <div class="col-3">
-          <button mat-raised-button color="primary">Aceptar</button>
-        </div>
-      </div>
+      </form>
     </div>
   </mat-expansion-panel>
   <mat-expansion-panel [expanded]="panelOpenState">

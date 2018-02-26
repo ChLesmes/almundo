@@ -11,7 +11,7 @@
     <span class="icon-star" *ngIf="hotel.stars > 4"></span>
   </div>
   <div class="amenities">
-    <span *ngFor="let amenities of hotel.amenities" class="icon-{{amenities}}"></span>
+    <span *ngFor="let amenities of hotel.amenities" class="icon-{{amenities}}" data-toggle="tooltip" data-placement="bottom" title="{{amenities.replace('-',' ')}}"></span>
   </div>
 </div>
 <div class="info col-md-12 col-lg-3">

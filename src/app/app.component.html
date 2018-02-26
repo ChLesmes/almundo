@@ -5,7 +5,7 @@
 </mat-toolbar>
 <section class="container-fluid list-view ">
   <div class="row">
-    <app-filter-form class="col-12 col-lg-3"></app-filter-form>
-    <app-hotel-list class="col-12 col-lg-9"></app-hotel-list>
+    <app-filter-form [filter]="filter" (ngModelChange)="updateFilter()" class="col-12 col-lg-3"></app-filter-form>
+    <app-hotel-list [hotels]="hotels" class="col-12 col-lg-9"></app-hotel-list>
   </div>
 </section>

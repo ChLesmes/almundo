@@ -6,6 +6,7 @@ import * as urljoin from 'url-join';
 import 'rxjs/add/operator/toPromise';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
+import { Filter } from "../filter/filter.model";
 
 @Injectable()
 export class HotelService {
@@ -17,8 +18,17 @@ export class HotelService {
   }
 
   getHotels(): Promise<void | Hotel[]> {
-    console.log('getHotels');
     return this.http.get(this.hotelsUrl)
+      .toPromise()
+      .then(response => response.json() as Hotel[])
+      .catch(HotelService.handleError);
+  }
+
+  getFilterHotels(filter: Filter) {
+    const body = JSON.stringify(filter);
+    const headers = new Headers({ 'Content-Type': 'application/json' });
+    const url = urljoin(this.hotelsUrl, 'filter');
+    return this.http.post(url, body, { headers })
       .toPromise()
       .then(response => response.json() as Hotel[])
       .catch(HotelService.handleError);
