@@ -1,18 +1,17 @@
 # Almundo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.1.
+Este proyecto es creado como parte de el examen de admisión Front-End de [Almundo](https://almundo.com.co/), fue generado con [Angular CLI](https://github.com/angular/angular-cli) versión 1.7.1., con [npm](https://www.npmjs.com/) versión 3.10.10, el back está en [node.js](https://nodejs.org/es/) versión 6.11.0 y el despliegue se realizo en [heroky](https://www.heroku.com/)  
 
-## Development server
+## Entorno de desarrollo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Para correr la aplicación en el entorno de desarrollo ejecuta `npm start` para en marcha tanto el back-end como el front-end. ingresa a `http://localhost:4200/`. la app cargara y traera datos del servidor que estará corriendo en `http://localhost:3000/`.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Para construir la aplicación de desarrollo ejecuta `npm run build` esto hara el build tanto de el back-end como del fron-end y el resultado quedara dentro de la carpeta `dist/`.
+
+
+## Default info
 
 ## Running unit tests
 
