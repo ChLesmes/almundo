@@ -1,9 +1,9 @@
 import Debug from 'debug';
 import app from './app';
+import { port } from './config';
 
-const PORT = 3000;
 const debug = new Debug('almundo:root');
 
-app.listen(PORT, ()=>{
-  debug(`Server running at port ${PORT}`);
+app.listen(port, ()=>{
+  debug(`Server running at port ${port}`);
 });
