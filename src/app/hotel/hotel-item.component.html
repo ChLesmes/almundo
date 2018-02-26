@@ -1,21 +1,21 @@
 <div class="container-img">
-  <img src="assets/images/hotels/2a5bb415_b.jpg" alt="Photo of a Shiba Inu">
+  <img src="assets/images/hotels/{{hotel.image}}" alt="{{hotel.name}}" onerror="this.onerror=null;this.src='assets/images/hotel-sin-imagen.jpg';">
 </div>
 <div class="description">
-  <h3>Hotel Stefanos</h3>
+  <h3>{{ hotel.name }}</h3>
   <div class="stars">
-    <span class="icon-star"></span>
-    <span class="icon-star"></span>
-    <span class="icon-star"></span>
+    <span class="icon-star" *ngIf="hotel.stars > 0"></span>
+    <span class="icon-star" *ngIf="hotel.stars > 1"></span>
+    <span class="icon-star" *ngIf="hotel.stars > 2"></span>
+    <span class="icon-star" *ngIf="hotel.stars > 3"></span>
+    <span class="icon-star" *ngIf="hotel.stars > 4"></span>
   </div>
   <div class="amenities">
-    <span class="icon-beach"></span>
-    <span class="icon-bathtub"></span>
-    <span class="icon-coffe-maker"></span>
+    <span *ngFor="let amenities of hotel.amenities" class="icon-{{amenities}}"></span>
   </div>
 </div>
 <div class="info col-md-12 col-lg-3">
   <p>Precio por noche por habitación</p>
-  <p class="price">ARS <span>2.657</span></p>
+  <p class="price">ARS <span>{{hotel.price }}</span></p>
   <button mat-raised-button color="primary">Ver Hotel</button>
 </div>

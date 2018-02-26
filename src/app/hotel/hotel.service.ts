@@ -17,6 +17,7 @@ export class HotelService {
   }
 
   getHotels(): Promise<void | Hotel[]> {
+    console.log('getHotels');
     return this.http.get(this.hotelsUrl)
       .toPromise()
       .then(response => response.json() as Hotel[])

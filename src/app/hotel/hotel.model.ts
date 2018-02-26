@@ -1,13 +1,13 @@
 export class Hotel {
   constructor(
+    public id: string,
     public name: string,
     public stars: string,
     public price: string,
     public image: string,
-    public amenities?: string[],
-    public _id?: string
+    public amenities?: string[]
   ) {
-    this._id = _id;
+    this.id = id;
     this.name = name;
     this.stars = stars;
     this.price = price;
